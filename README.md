@@ -1,50 +1,37 @@
-Cargo Data Analysis (Synthetic Data)
+# Cargo Data Analysis (Synthetic Data)
 
-This project simulates and analyzes cargo shipment data using synthetic datasets.
+[![Open Synthetic Data in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Yed-hu/Projects/blob/main/Synthetic_data.ipynb)
+[![Open Analysis in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Yed-hu/Projects/blob/main/Cargo_Data_Analysis.ipynb)
 
-It includes two main parts:
+This project simulates and analyzes end-to-end cargo shipment data using synthetically generated records.  
+It demonstrates the process of generating, cleaning, transforming, and analyzing logistics-related datafrom customer details to shipment performance using tools like **Python**, **Pandas**, and **Apache Spark**.
 
+---
 
+## Project Components
 
-Synthetic Data Generation (Synthetic_data.ipynb)
+### 1. Synthetic Data Generation (`Synthetic_data.ipynb`)
+Leveraging the `Faker` library and Python's built-in modules, this notebook creates realistic but fictional datasets mimicking a logistics/cargo business:
 
-Uses Python and the Faker library to generate realistic but fake datasets:
+- **Customers**: 750 unique records with personal and demographic details (e.g., name, contact, occupation, region, etc.)
+- **Shipments**: 25,000 shipment records including weight, volume, dates, provider, service type, and status
+- **Transactions**: Financial records linked to each shipment, with payment methods and statuses
+- **Feedbacks**: Delivery feedback and customer complaints including ratings and issue types
 
-Customers (750)
+---
 
-Shipments (25,000)
+### 2. Data Analysis with PySpark (`Cargo_Data_Analysis.ipynb`)
+This notebook loads the generated CSV files into **PySpark DataFrames** for scalable analysis:
 
-Transactions
+- Schema inspection and data cleaning (e.g., removing redundant columns, type conversions)
+- Enrichment with derived fields (e.g., customer age, delivery time in days)
+- Group-by aggregations and trend analysis:
+  - Customer demographics by nationality, occupation, and type
+  - Shipment trends by region, delivery time, and destination
+  - Financial insights such as total transaction value (in crores)
+  - Delivery performance metrics and complaint analysis
 
-Delivery Feedback
-
-Data includes customer demographics, shipment details, payment info, and feedback.
-
-
-
-
-Data Analysis (Cargo_Data_Analysis.ipynb)
-
-Loads generated CSVs using PySpark
-
-Cleans and transforms data (adds delivery time, customer age, etc.)
-
-Performs analysis on:
-
-Customer types and regions
-
-Shipment trends
-
-Financial transactions
-
-Delivery performance
+---
 
 
-
-
-Run in Colab
-
-Generate data → download CSVs
-
-Upload CSVs in the analysis notebook
 
